@@ -8,16 +8,13 @@ require_once  __DIR__ . '/../src/Car.php';
 // On instancie un objet à partir de la classe Car
 $firstCar = new Car();
 
-// Affichage de $firstCar avant la modification des propriétés
-var_dump($firstCar);
-
-//Modification des propriétés public
 $firstCar->color = "Black";
 $firstCar->brand = "BMW";
+echo $firstCar->speak() . '<br>'; // Affiche le message en francais car 'fr" est la valeur par default de la méthode.
+echo $firstCar->speak('en') . '<br>'; // Affiche le message en anglais, car on lui donne comme argument 'en' qui n'est donc pas 'fr'.
 
-// Affichage de $firstCar aprés la modification des propriétés (La couleur n'est plus "Grey" mais "Black")
-var_dump($firstCar);
-
-echo "La marque de la voiture est: " . $firstCar->brand . "<br>"; // Affiche: BMW
-echo "La couleur de cette voiture est: " . $firstCar->color . "<br>"; // Affiche: Black
-
+// On instancie un second objet à partir de la classe Car
+$secondCar = new Car();
+$secondCar->color = "Red";
+$secondCar->brand = "Audi";
+echo $secondCar->speak('en') . '<br>';

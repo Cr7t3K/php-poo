@@ -7,4 +7,16 @@ class Car {
     public $color = "Grey";
     public $brand;
     public $energy;
+    public $speed = 0;
+
+    public function speak($lang = 'fr')
+    {
+        if($lang === 'fr') {
+            $message = "Vroom vroom !!, ma couleur est ";
+        } else {
+            $message = "Vroom vroom !!, my color is ";
+        }
+
+        return $message . $this->color;
+    }
 }
