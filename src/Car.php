@@ -1,4 +1,5 @@
 <?php
+namespace App;
 
 // On crée la classe Car grâce au mot-clé 'class'
 class Car {
