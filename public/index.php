@@ -4,17 +4,17 @@
 require_once  __DIR__ . '/../src/Car.php';
 
 
-
 // On instancie un objet à partir de la classe Car
-$firstCar = new Car();
+$firstCar = new Car("BMW", "Petrol");
 
-$firstCar->color = "Black";
-$firstCar->brand = "BMW";
-echo $firstCar->speak() . '<br>'; // Affiche le message en francais car 'fr" est la valeur par default de la méthode.
-echo $firstCar->speak('en') . '<br>'; // Affiche le message en anglais, car on lui donne comme argument 'en' qui n'est donc pas 'fr'.
+// Affiche la couleur de la voiture "Grey" par défaut
+//echo $firstCar->color; // Doit normalement retourner "Grey"
+
+echo $firstCar->getColor() . "<br>";
+$firstCar->setColor("Black"); // On change la couleur "Grey" par "Black"
+echo $firstCar->getColor() . "<br>";
+
 
 // On instancie un second objet à partir de la classe Car
-$secondCar = new Car();
-$secondCar->color = "Red";
-$secondCar->brand = "Audi";
+$secondCar = new Car("Audi", "Electric", "Red");
 echo $secondCar->speak('en') . '<br>';
